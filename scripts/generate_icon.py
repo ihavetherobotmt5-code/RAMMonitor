@@ -3,6 +3,11 @@
 Creates a simple RAM-module glyph in the Windows 11 accent blue (#60CDFF)
 at 4 sizes: 16x16, 32x32, 48x48, 256x256.
 
+The glyph is a stylized RAM stick:
+- Rounded rectangle outline (the PCB)
+- 2 horizontal lines (the ICs)
+- 1 vertical line at the bottom (the connector notch)
+
 Run:
     python scripts/generate_icon.py
 """
@@ -20,6 +25,7 @@ ACCENT_DIM = (96, 205, 255, 180)
 
 
 def draw_glyph(size: int) -> Image.Image:
+    """Draw the RAM-module glyph at the given size."""
     img = Image.new("RGBA", (size, size), BG_TRANSPARENT)
     draw = ImageDraw.Draw(img)
     m = max(2, size // 8)
